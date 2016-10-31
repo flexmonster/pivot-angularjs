@@ -7,7 +7,7 @@ Website: www.flexmonster.com
 
 ## Example
 
-Basic example loads remote report. Please find more examples in the repository. Also, [full tutorial is available at the www.flexmonster.com](http://www.flexmonster.com/doc/integration-with-angularjs/).
+Please find more examples in the repository. Also, [full tutorial is available at the www.flexmonster.com](http://www.flexmonster.com/doc/integration-with-angularjs/).
 ```
 <!DOCTYPE html>
 <html ng-app="App">
