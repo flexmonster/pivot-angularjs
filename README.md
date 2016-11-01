@@ -2,7 +2,7 @@
 
 Flexmonster Pivot Table Component is the most powerful JavaScript tool 
 to visualize your business data.
-
+![Flexmonster Pivot Table Component](http://www.flexmonster.com/base/assets/img/firstscreen.png)
 Website: www.flexmonster.com
 
 ## Example
@@ -36,7 +36,7 @@ Please note, that every attribute for fm-pivot directive is set either as a stri
 - `fm-license-key` – the license key.
 - `fm-width` – width of the component on the page (pixels or percent). The default value for width is 100%.
 - `fm-height` – height of the component on the page (pixels or percent). The default value for height is 500.
-- `fm-component-folder` – URL of the component’s folder which contains all necessary files. Also, it is used as a base URL - - `for report files`, localization files, styles and images. The default value for componentFolder is flexmonster/.
+- `fm-component-folder` – URL of the component’s folder which contains all necessary files. Also, it is used as a base URL for report files, localization files, styles and images. The default value is `flexmonster/`.
 - `fm-report` – property to set a report. It can be inline report JSON, URL to report JSON or URL to report XML.
 - `fm-global` – object that allows you to preset options for all reports. These options can be overwritten for concrete reports. Object structure is the same as for report.
 
