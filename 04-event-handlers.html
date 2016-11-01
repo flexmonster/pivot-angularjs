@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="App">
+
+<head>
+    <title>Flexmonster/AngularJS</title>
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!-- Flexmonster -->
+    <script src="https://s3.amazonaws.com/flexmonster/2.3/flexmonster.js"></script>
+    <script type="text/javascript">
+    angular.module("App", ["flexmonster"]);
+    angular.module('App').controller('PivotCtrl', ['$scope', PivotController]);
+
+    function PivotController($scope) {
+        $scope.onReady = function(pivot) {
+            console.log("[fm-ready]", pivot);
+        }
+        $scope.onReportComplete = function() {
+            console.log("[fm-report-complete]");
+        }
+        $scope.onReportChange = function() {
+            console.log("[fm-report-change]");
+        }
+        $scope.onUpdate = function() {
+            console.log("[fm-update]");
+        }
+        $scope.onCellClick = function(cell) {
+            console.log("[fm-cell-click]", cell);
+        }
+        $scope.onCellDoubleClick = function(cell) {
+            console.log("[fm-cell-double-click]", cell);
+        }
+        $scope.onFilterOpen = function(params) {
+            console.log("[fm-filter-open]", params);
+        }
+        $scope.onFieldsListOpen = function() {
+            console.log("[fm-fields-list-open]");
+        }
+        $scope.onFieldsListClose = function() {
+            console.log("[fm-fields-list-close]");
+        }
+    }
+    </script>
+</head>
+
+<body ng-controller="PivotCtrl">
+    <h1>Event handlers</h1>
+    <div fm-pivot 
+         fm-component-folder="https://s3.amazonaws.com/flexmonster/2.3/" 
+         fm-toolbar="true"
+         fm-report="'https://s3.amazonaws.com/flexmonster/2.3/reports/report.json'" 
+         fm-license-key="Z77A-XAEI3Y-304773-321502"
+         fm-ready="onReady(pivot)" 
+         fm-report-complete="onReportComplete()"
+         fm-report-change="onReportChange()"
+         fm-update="onUpdate()"
+         fm-cell-click="onCellClick(cell)"
+         fm-cell-double-click="onCellDoubleClick(cell)"
+         fm-filter-open="onFilterOpen(params)"
+         fm-fields-list-open="onFieldsListOpen()"
+         fm-fields-list-close="onFieldsListClose()">
+    </div>
+</body>
+
+</html>
