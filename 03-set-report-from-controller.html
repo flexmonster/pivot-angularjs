@@ -2,7 +2,7 @@
 <html ng-app="App">
 
 <head>
-    <title>Simple Flexmonster Pivot</title>
+    <title>Set report from controller</title>
     <!-- AngularJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
     <!-- jQuery -->
@@ -37,36 +37,38 @@
             "Quantity": 19
         }];
 
-        //report
-        $scope.report = {
-            dataSource: {
-                dataSourceType: "json",
-                data: jsonData
-            },
-            slice: {
-                rows: [{
-                    uniqueName: "Color"
-                }],
-                columns: [{
-                    uniqueName: "Country"
-                }, {
-                    uniqueName: "[Measures]"
-                }],
-                measures: [{
-                    uniqueName: "Quantity"
-                }],
+        $scope.onFlexmonsterReady = function(pivot) {
+            var report = {
+                dataSource: {
+                    dataSourceType: "json",
+                    data: jsonData
+                },
+                slice: {
+                    rows: [{
+                        uniqueName: "Color"
+                    }],
+                    columns: [{
+                        uniqueName: "Country"
+                    }, {
+                        uniqueName: "[Measures]"
+                    }],
+                    measures: [{
+                        uniqueName: "Quantity"
+                    }],
+                }
             }
+            pivot.setReport(report);
         }
     }
     </script>
 </head>
 
 <body ng-controller="PivotCtrl">
-    <h1>Simple Flexmonster Pivot</h1>
+    <h1>Set report from controller</h1>
     <div fm-pivot 
          fm-component-folder="https://s3.amazonaws.com/flexmonster/2.3/" 
          fm-toolbar="true" 
-         fm-report=report 
+         fm-ready="onFlexmonsterReady(pivot)" 
          fm-license-key="Z77A-XAEI3Y-304773-321502">
     </div>
 </body>
