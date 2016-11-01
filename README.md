@@ -2,7 +2,7 @@
 
 Flexmonster Pivot Table Component is the most powerful JavaScript tool 
 to visualize your business data.
-[[http://www.flexmonster.com/base/assets/img/firstscreen.png|alt=Flexmonster Pivot Table Component]]
+![alt text](http://www.flexmonster.com/base/assets/img/firstscreen.png "Flexmonster Pivot Table Component")
 Website: www.flexmonster.com
 
 ## Example
