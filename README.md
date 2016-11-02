@@ -7,7 +7,7 @@ Website: www.flexmonster.com
 ## Example
 
 Please find more examples in the repository. Also, [full tutorial is available at the www.flexmonster.com](http://www.flexmonster.com/doc/integration-with-angularjs/).
-```
+```html
 <!DOCTYPE html>
 <html ng-app="App">
 <head>
