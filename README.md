@@ -2,7 +2,7 @@
 
 [![Flexmonster Pivot table component](https://s3.amazonaws.com/flexmonster/github/fm-github-cover.png)](http://flexmonster.com)
 
-Website: <a href="http://flexmonster.com" target="_blank">www.flexmonster.com</a>
+Website: www.flexmonster.com
 
 ## Example
 
