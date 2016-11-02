@@ -39,6 +39,8 @@ Please note, that every attribute for fm-pivot directive is set either as a stri
 - `fm-report` – property to set a report. It can be inline report JSON, URL to report JSON or URL to report XML.
 - `fm-global` – object that allows you to preset options for all reports. These options can be overwritten for concrete reports. Object structure is the same as for report.
 
+All attributes are equal to those which are passed to [`$.flexmonster()`](http://www.flexmonster.com/api/flexmonster/). The only difference is that `fm-` prefix was added to each of them.
+
 ## Event handlers:
 
 - `fm-ready`
@@ -51,4 +53,3 @@ Please note, that every attribute for fm-pivot directive is set either as a stri
 - `fm-fields-list-open`
 - `fm-fields-list-close`
 
-All attributes are equal to those which are passed to `$.flexmonster()`. The only difference is that `fm-` prefix was added to each of them.
