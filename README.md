@@ -1,9 +1,8 @@
 # Integration of Flexmonster Pivot Table Component with AngularJS framework
 
-Flexmonster Pivot Table Component is the most powerful JavaScript tool 
-to visualize your business data.
-![alt text](http://www.flexmonster.com/base/assets/img/firstscreen.png "Flexmonster Pivot Table Component")
-Website: www.flexmonster.com
+[![Flexmonster Pivot table component](https://s3.amazonaws.com/flexmonster/github/fm-github-cover.png)](http://flexmonster.com)
+
+Website: <a href="http://flexmonster.com" target="_blank">www.flexmonster.com</a>
 
 ## Example
 
