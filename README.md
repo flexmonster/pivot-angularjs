@@ -53,3 +53,4 @@ All attributes are equal to those which are passed to [`$.flexmonster()`](http:/
 - `fm-fields-list-open`
 - `fm-fields-list-close`
 
+Full list of events is [available in the documentation](http://www.flexmonster.com/api/events/).
