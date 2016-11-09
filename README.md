@@ -21,7 +21,8 @@ Please find more examples in the repository. Also, [full tutorial is available a
 <body>
 <div fm-pivot 
      fm-toolbar="true" 
-     fm-report="'http://www.flexmonster.com/download/report.xml'"
+     fm-component-folder="https://s3.amazonaws.com/flexmonster/2.3/"
+     fm-report="'https://s3.amazonaws.com/flexmonster/2.3/reports/report.json'"
      fm-license-key="XXX">
 </div>
 </body>
