@@ -1,14 +1,11 @@
-# Integration of Flexmonster Pivot Table Component with AngularJS framework
-
-Flexmonster Pivot Table Component is the most powerful JavaScript tool 
-to visualize your business data.
-![alt text](http://www.flexmonster.com/base/assets/img/firstscreen.png "Flexmonster Pivot Table Component")
+# Flexmonster Pivot table component integration with AngularJS framework
+[![Flexmonster Pivot table component](https://s3.amazonaws.com/flexmonster/github/fm-github-cover.png)](http://flexmonster.com)
 Website: www.flexmonster.com
 
 ## Example
 
 Please find more examples in the repository. Also, [full tutorial is available at the www.flexmonster.com](http://www.flexmonster.com/doc/integration-with-angularjs/).
-```
+```html
 <!DOCTYPE html>
 <html ng-app="App">
 <head>
@@ -16,7 +13,7 @@ Please find more examples in the repository. Also, [full tutorial is available a
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
     <script type="text/javascript">angular.module("App", ["flexmonster"]);</script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script src="flexmonster/flexmonster.js"></script>
+    <script src="https://s3.amazonaws.com/flexmonster/2.3/flexmonster.js"></script>
 </head>
 <body>
 <div fm-pivot 
@@ -41,6 +38,8 @@ Please note, that every attribute for fm-pivot directive is set either as a stri
 - `fm-report` – property to set a report. It can be inline report JSON, URL to report JSON or URL to report XML.
 - `fm-global` – object that allows you to preset options for all reports. These options can be overwritten for concrete reports. Object structure is the same as for report.
 
+All attributes are equal to those which are passed to [`$.flexmonster()`](http://www.flexmonster.com/api/flexmonster/). The only difference is that `fm-` prefix was added to each of them.
+
 ## Event handlers:
 
 - `fm-ready`
@@ -53,4 +52,4 @@ Please note, that every attribute for fm-pivot directive is set either as a stri
 - `fm-fields-list-open`
 - `fm-fields-list-close`
 
-All attributes are equal to those which are passed to `$.flexmonster()`. The only difference is that `fm-` prefix was added to each of them.
+Full list of events is [available in the documentation](http://www.flexmonster.com/api/events/).
