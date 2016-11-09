@@ -13,12 +13,12 @@ Please find more examples in the repository. Also, [full tutorial is available a
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
     <script type="text/javascript">angular.module("App", ["flexmonster"]);</script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script src="flexmonster/flexmonster.js"></script>
+    <script src="https://s3.amazonaws.com/flexmonster/2.3/flexmonster.js"></script>
 </head>
 <body>
 <div fm-pivot 
      fm-toolbar="true" 
-     fm-report="'http://www.flexmonster.com/download/report.xml'"
+     fm-report="'https://s3.amazonaws.com/flexmonster/2.3/reports/report.xml'"
      fm-license-key="XXX">
 </div>
 </body>
