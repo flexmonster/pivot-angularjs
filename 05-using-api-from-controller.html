@@ -59,10 +59,10 @@
         };
 
         $scope.onFlexmonsterReady = function(pivot) {
-			$scope.pivot = pivot; //making pivot accessible via scope
+            $scope.pivot = pivot; //making pivot accessible via scope
         }
-		
-		$scope.useAPICall = function() {
+
+        $scope.useAPICall = function() {
             $scope.pivot.showCharts();
         }
     }
@@ -71,11 +71,11 @@
 
 <body ng-controller="PivotCtrl">
     <h1>Using API from controller</h1>
-	<button ng-click="useAPICall()">Show Charts</button>
+    <button ng-click="useAPICall()">Show Charts</button>
     <div fm-pivot 
          fm-component-folder="https://s3.amazonaws.com/flexmonster/2.3/" 
          fm-toolbar="true" 
-		 fm-report=report 
+         fm-report=report 
          fm-ready="onFlexmonsterReady(pivot)" 
          fm-license-key="Z7VF-XDB50J-531439-676J6Y">
     </div>
