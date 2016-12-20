@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html ng-app="App">
+
+<head>
+    <title>Flexmonster/AngularJS</title>
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!-- Flexmonster -->
+    <script src="http://s3.amazonaws.com/flexmonster/2.3/flexmonster.js"></script>
+    <script type="text/javascript">
+    angular.module("App", ["flexmonster"]);
+    angular.module('App').controller('PivotCtrl', ['$scope', PivotController]);
+
+    function PivotController($scope) {
+
+        //JSON data
+        var jsonData = [{
+            "Color": "green",
+            "M": "September",
+            "W": "Wed",
+            "Сountry": "Canada",
+            "State": "Ontario",
+            "City": "Toronto",
+            "Price": 174,
+            "Quantity": 22
+        }, {
+            "Color": "red",
+            "M": "March",
+            "W": "Mon",
+            "Time": "1000",
+            "Сountry": "USA",
+            "State": "California",
+            "City": "Los Angeles",
+            "Price": 1664,
+            "Quantity": 19
+        }];
+
+        //report
+        $scope.reports = [{
+            dataSource: {
+                dataSourceType: "microsoft analysis services",
+                proxyUrl: "http://olap.flexmonster.com/olap/msmdpump.dll",
+                catalog: "Adventure Works DW Standard Edition",
+                cube: "Adventure Works"
+            },
+            slice: {
+                rows: [{
+                    uniqueName: "[Geography].[Geography]"
+                }],
+                columns: [{
+                    uniqueName: "[Product].[Category]"
+                }, {
+                    uniqueName: "[Measures]"
+                }],
+                measures: [{
+                    uniqueName: "[Measures].[Reseller Order Count]"
+                }, {
+                    uniqueName: "[Measures].[Discount Amount]"
+                }]
+            }
+        }, {
+            dataSource: {
+                data: jsonData
+            },
+            slice: {
+                rows: [{
+                    uniqueName: "Color"
+                }],
+                columns: [{
+                    uniqueName: "Color"
+                }, {
+                    uniqueName: "[Measures]"
+                }],
+                measures: [{
+                    uniqueName: "Quantity"
+                }],
+            }
+        }];
+
+		$scope.pivotInstances = [];
+		
+        $scope.onFlexmonsterReady = function(pivot) {
+			$scope.pivotInstances.push(pivot); //making pivot instances accessible via scope
+        }
+		
+		$scope.useAPICall = function(idx) {
+            $scope.pivotInstances[idx].showCharts();
+        }
+    }
+    </script>
+</head>
+
+<body ng-controller="PivotCtrl">
+    <h1>Using several pivots with ng-repeat</h1>
+	<button ng-click="useAPICall(0)">Show Charts on Pivot 1</button>
+	<button ng-click="useAPICall(1)">Show Charts on Pivot 2</button>
+	<div ng-repeat="report in reports">
+		<div fm-pivot 
+			 fm-component-folder="https://s3.amazonaws.com/flexmonster/2.3/" 
+			 fm-toolbar="true" 
+			 fm-report=report
+			 fm-ready="onFlexmonsterReady(pivot)" 
+			 fm-license-key="Z7VF-XDB50J-531439-676J6Y">
+		</div>
+	</div>
+
+</body>
+
+</html>
