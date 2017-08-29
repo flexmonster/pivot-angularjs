@@ -5,10 +5,8 @@
     <title>Flexmonster/AngularJS</title>
     <!-- AngularJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <!-- Flexmonster -->
-    <script src="https://s3.amazonaws.com/flexmonster/2.3/flexmonster.js"></script>
+    <script src="https://cdn.flexmonster.com/flexmonster.js"></script>
     <script type="text/javascript">
     angular.module("App", ["flexmonster"]);
     angular.module('App').controller('PivotCtrl', ['$scope', PivotController]);
@@ -66,10 +64,9 @@
 <body ng-controller="PivotCtrl">
     <h1>Set report from controller</h1>
     <div fm-pivot 
-         fm-component-folder="https://s3.amazonaws.com/flexmonster/2.3/" 
+         fm-component-folder="https://cdn.flexmonster.com/" 
          fm-toolbar="true" 
-         fm-ready="onFlexmonsterReady(pivot)" 
-         fm-license-key="Z77A-XAEI3Y-304773-321502">
+         fm-ready="onFlexmonsterReady(pivot)">
     </div>
 </body>
 
