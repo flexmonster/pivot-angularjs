@@ -5,10 +5,8 @@
     <title>Flexmonster/AngularJS</title>
     <!-- AngularJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <!-- Flexmonster -->
-    <script src="https://s3.amazonaws.com/flexmonster/2.3/flexmonster.js"></script>
+    <script src="https://cdn.flexmonster.com/flexmonster.js"></script>
     
     <script type="text/javascript">
     angular.module("App", ["flexmonster"]);
@@ -48,8 +46,9 @@
               id: "fm-tab-open",
               title: this.Labels.open,
               handler: function() {
-                this.pivot.setReport({ "dataSource": {"filename": "http://cdn.flexmonster.com/2.3/data/data.csv"}});
-              }
+                this.pivot.setReport({ "dataSource": {"filename": "http://cdn.flexmonster.com/data/data.csv"}});
+              },
+              icon: this.icons.open
             });
             return tabs;
           }
@@ -62,7 +61,7 @@
 <body ng-controller="PivotCtrl">
     <h1>Using customizeToolbar</h1>
     <div fm-pivot 
-        fm-component-folder="https://s3.amazonaws.com/flexmonster/2.3/"
+        fm-component-folder="https://cdn.flexmonster.com/"
         fm-toolbar="true" 
         fm-report=report 
         fm-before-toolbar-created="customizeToolbarFunction(toolbar)">
