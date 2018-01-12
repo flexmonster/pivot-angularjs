@@ -8,12 +8,12 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <!-- Flexmonster -->
-    <script src="https://s3.amazonaws.com/flexmonster/2.3/flexmonster.js"></script>
+    <script src="https://cdn.flexmonster.com/flexmonster.js"></script>
     <style type="text/css">
     .link {
         text-decoration: underline !important;
         cursor: pointer;
-        color: #fbee8f !important;
+        color: #726b04 !important;
     }
     </style>
     <script type="text/javascript">
@@ -23,7 +23,7 @@
     function PivotController($scope) {
         $scope.report = {
             "dataSource": {
-                "filename": "https://s3.amazonaws.com/flexmonster/2.3/data/data.csv"
+                "filename": "https://cdn.flexmonster.com/data/data.csv"
             },
             "slice": {
                 "rows": [{
@@ -54,10 +54,17 @@
             }
         }
 
-        $scope.customizeCellFunction = function(html, data) {
-            if (data.hierarchy && data.hierarchy.uniqueName == "Country" && data.member) {
-                return "<a href='https://en.wikipedia.org/wiki/" + data.member.caption + "' target='_blank' class='link' onclick='preventExpand(event)'>" + html + "</a>";
+        $scope.customizeCellFunction = function(cell, data) {
+          if (data.hierarchy && data.hierarchy.uniqueName == "Country" && data.member) {
+            var el = document.createElement( 'div' );
+            el.innerHTML = cell.text;
+            var parts = cell.text.split(el.innerText);
+            if (parts.length == 2) {
+              cell.text = parts[0] + "<a href='https://en.wikipedia.org/wiki/" + data.member.caption + "' target='_blank' class='link' onclick='preventExpand(event)'>" + el.innerText + "</a>" + parts[1];
+            } else {
+              cell.text = "<a href='https://en.wikipedia.org/wiki/" + data.member.caption + "' target='_blank' class='link' onclick='preventExpand(event)'>" + el.innerText + "</a>";
             }
+          }
         }
 
         window.preventExpand = function(e) {
@@ -70,7 +77,7 @@
 <body ng-controller="PivotCtrl">
     <h1>Using customizeCell</h1>
     <div fm-pivot 
-        fm-component-folder="https://s3.amazonaws.com/flexmonster/2.3/"
+        fm-component-folder="https://cdn.flexmonster.com/"
         fm-toolbar="true" 
         fm-report=report 
         fm-customize-cell="customizeCellFunction(html, data)">
