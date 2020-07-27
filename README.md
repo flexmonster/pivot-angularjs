@@ -19,7 +19,7 @@ This repository holds the source code for a simple [AngularJS](https://angularjs
 git clone https://github.com/flexmonster/pivot-angularjs.git
 ```
 
-2. Go to the `pivot-angularjs/` folder, choose one of the eight examples containing there, and open it in the browser to see the result.
+2. Go to the `pivot-angularjs/` folder, choose one of the eight AngularJS pivot table examples containing there, and open it in the browser to see the result.
 
 ## Usage
 
