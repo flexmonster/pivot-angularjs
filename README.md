@@ -1,5 +1,5 @@
 # Flexmonster Pivot table component integration with AngularJS framework
-[![Flexmonster Pivot table component](https://www.flexmonster.com/fm_uploads/2020/06/GitHub_fm.png)](http://flexmonster.com)
+[![Flexmonster Pivot table component](https://cdn.flexmonster.com/landing.png)](http://flexmonster.com)
 Website: www.flexmonster.com
 
 ## Flexmonster Pivot Table & Charts
